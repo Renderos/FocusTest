@@ -23,25 +23,36 @@ public class FocusSearchTest {
 
 	@Test
 	public void testFocusSearch() {
-		WebElement searchbox = driver.findElement(By.name("q"));
+		WebElement searchbox = driver.findElement(By.name("q")); //google search
 		searchbox.clear();
-		searchbox.sendKeys("Focus Services");
-		searchbox.submit();
+		searchbox.sendKeys("Focus Services"); //type keywords
+		searchbox.submit();		//submit search
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //wait 
+	}
+	
+	@Test
+	public void testSearchURL() {
+		WebElement searchurl = driver.findElement(By.xpath("//*[contains(text(), 'https://www.focusservices.com')]"));
+		searchurl.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-			WebElement searchurl = driver.findElement(By.xpath("//*[contains(text(), 'https://www.focusservices.com')]"));
-			searchurl.click();
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-			JavascriptExecutor jse = (JavascriptExecutor)driver;
-			jse.executeScript("window.scrollTo(0,document.body.scrollHeight);");
-			
-			
-			
+	}
+		
+	@Test
+	public void testScrollDown() {
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight);");
+	}
+	
+	@Test
+	public void testSearchHiringNow() {
+		WebElement searchhiring = driver.findElement(By.linkText("Now Hiring!"));
+				
 
 	}
 	
 	@After
 	public void tearDown() throws Exception {
-		//driver.quit();
+		driver.quit();
 	}
 
 }
