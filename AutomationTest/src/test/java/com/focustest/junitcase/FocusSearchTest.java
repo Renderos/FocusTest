@@ -47,6 +47,7 @@ public class FocusSearchTest {
 		WebElement Locations = driver.findElement(By.xpath("//*[contains(text(), 'Locations')]"));
 		Locations.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		jse.executeScript("window.scrollTo(0,700);");
 		
 		WebElement North = driver.findElement(By.xpath("//*[contains(text(), 'North America')]"));
 		assertEquals(North.getText(),"NORTH AMERICA");
