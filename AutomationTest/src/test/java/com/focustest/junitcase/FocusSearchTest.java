@@ -1,9 +1,13 @@
 package com.focustest.junitcase;
 
-import static org.junit.Assert.*;
 
+
+import static org.junit.Assert.assertEquals;
+
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.UnknownHostException;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
@@ -30,13 +34,15 @@ public class FocusSearchTest {
 		searchbox.clear();
 		searchbox.sendKeys("Focus Services");
 		searchbox.submit();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		
-		
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			WebElement searchurl = driver.findElement(By.xpath("//*[contains(text(), 'https://www.focusservices.com')]"));
+			searchurl.click();
+
 	}
 	
 	@After
 	public void tearDown() throws Exception {
+		
 	}
 
 }
