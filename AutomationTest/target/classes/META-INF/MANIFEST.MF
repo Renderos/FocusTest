@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Built-By: reren
 Build-Jdk: 17.0.2
 Created-By: Maven Integration for Eclipse
 
+=======
+Manifest-Version: 1.0
+Built-By: reren
+Build-Jdk: 17.0.2
+Created-By: Maven Integration for Eclipse
+
+>>>>>>> 01572f5fdca6e1d5d7f4b4abe268cf2ba92a7f7e
